@@ -9,6 +9,7 @@ export default React.createClass({
         const {
             isFetching,
             note,
+            onSaveClick,
             onBackClick,
         } = this.props
 
@@ -19,13 +20,28 @@ export default React.createClass({
         return (
             <div>
                 <h3>{note.title}</h3>
-                <a
-                    href="#"
-                    onCLick={e => {
-                        e.preventDefault()
-                        onBackClick()
-                    }}
-                >Back</a>
+
+                <textarea
+                    ref='body'
+                    cols="30"
+                    rows="10"
+                    defaultValue={note.body}
+                />
+                <button onClick={() => {
+                    onSaveClick(Object.assign(note, {
+                        body: this.refs.body.value
+                    }))
+                }}>Save</button>
+
+                <p>
+                    <a
+                        href="#"
+                        onCLick={e => {
+                            e.preventDefault()
+                            onBackClick()
+                        }}
+                    >Back</a>
+                </p>
             </div>
         )
     }

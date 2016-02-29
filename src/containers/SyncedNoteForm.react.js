@@ -4,6 +4,7 @@ import { push } from 'react-router-redux'
 
 import {
     pouchGetNote,
+    pouchPutNote,
 } from '../actions'
 
 import NoteForm from '../components/NoteForm.react'
@@ -21,9 +22,15 @@ const mapDispatchToProps = dispatch => {
         onComponentWillMount: id => {
             dispatch(pouchGetNote(id))
         },
+        onSaveClick: (note) => {
+            dispatch(pouchPutNote(note))
+                .then(() => {
+                    dispatch(push('/'))
+                })
+        },
         onBackClick: () => {
             dispatch(push('/'))
-        }
+        },
     }
 }
 
