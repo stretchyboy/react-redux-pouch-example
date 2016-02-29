@@ -1,6 +1,4 @@
-import PouchDB from 'pouchdb'
-
-const db = new PouchDB('http://127.0.0.1:5984/sync-note')
+import { db } from './configureDB'
 
 export const POUCH_REQUEST_FETCH_ALL_NOTES = 'POUCH_REQUEST_FETCH_ALL_NOTES'
 export const POUCH_RECEIVE_FETCH_ALL_NOTES = 'POUCH_RECEIVE_FETCH_ALL_NOTES'

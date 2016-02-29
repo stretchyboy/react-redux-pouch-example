@@ -1,7 +1,7 @@
 import {
     POUCH_REQUEST_FETCH_ALL_NOTES,
     POUCH_RECEIVE_FETCH_ALL_NOTES,
-} from '../../actions/pouch'
+} from '../../actions'
 
 const initialState = {
     isFetching: false,
