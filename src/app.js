@@ -11,7 +11,6 @@ import {
 //    browserHistory as history,  // browserHistory is recommended for production
     hashHistory as history,  // For development
 } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
 
 import configureStore from './store/configureStore'
 const store = configureStore()
