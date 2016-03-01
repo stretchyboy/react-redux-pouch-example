@@ -8,8 +8,8 @@ import {
     Router,
     Route,
     IndexRoute,
-//    browserHistory as history,
-    hashHistory as history,
+//    browserHistory as history,  // browserHistory is recommended for production
+    hashHistory as history,  // For development
 } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
